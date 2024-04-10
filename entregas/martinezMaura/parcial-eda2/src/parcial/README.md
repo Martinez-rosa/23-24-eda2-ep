@@ -1,3 +1,16 @@
+### Explicación del Código `DocumentType`
+
+El código proporciona una enumeración (`enum`) llamada `DocumentType` que representa los diferentes tipos de documentos disponibles en un sistema de gestión de bibliotecas.
+
+- **Valores Enumerados:**
+  - `BOOK`: Representa un tipo de documento de libro.
+  - `MAGAZINE`: Representa un tipo de documento de revista.
+  - `ARTICLE`: Representa un tipo de documento de artículo.
+  - `PAPER`: Representa un tipo de documento de papel o informe.
+
+#### Uso de la Enumeración:
+La enumeración `DocumentType` permite definir un conjunto fijo de tipos de documentos que pueden ser utilizados en el sistema. Esto facilita la validación y gestión de los tipos de documentos permitidos, evitando errores de tipo durante la manipulación de datos.
+
 ### Explicación del Código `Document`
 
 - **Atributos:**
