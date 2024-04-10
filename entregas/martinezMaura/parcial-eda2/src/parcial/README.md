@@ -11,6 +11,8 @@ El código proporciona una enumeración (`enum`) llamada `DocumentType` que repr
 #### Uso de la Enumeración:
 La enumeración `DocumentType` permite definir un conjunto fijo de tipos de documentos que pueden ser utilizados en el sistema. Esto facilita la validación y gestión de los tipos de documentos permitidos, evitando errores de tipo durante la manipulación de datos.
 
+---
+
 ### Explicación del Código `Document`
 
 - **Atributos:**
@@ -64,6 +66,7 @@ La enumeración `DocumentType` permite definir un conjunto fijo de tipos de docu
   - `getAuthorId()`, `setAuthorId(int authorId)`: Obtiene y establece el ID del autor.
   - `toString()`: Retorna una representación en cadena de la relación entre documento y autor, incluyendo sus IDs.
 
+---
 
 ## Explicación del Código LibraryManager
 
