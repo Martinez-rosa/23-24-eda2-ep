@@ -1,3 +1,57 @@
+### Explicación del Código `Document`
+
+- **Atributos:**
+  - `id`: Identificador único del documento.
+  - `title`: Título del documento.
+  - `publicationYear`: Año de publicación del documento.
+  - `type`: Tipo del documento (`DocumentType`).
+  - `keywords`: Lista de palabras clave asociadas al documento.
+
+- **Constructor:**
+  - Inicializa los atributos `id`, `title`, `publicationYear`, `type` y `keywords` al crear una instancia de `Document`.
+
+- **Métodos Principales:**
+  - `getId()`: Retorna el ID del documento.
+  - `getTitle()`, `setTitle(String title)`: Obtiene y establece el título del documento.
+  - `getPublicationYear()`, `setPublicationYear(int publicationYear)`: Obtiene y establece el año de publicación del documento.
+  - `getType()`, `setType(DocumentType type)`: Obtiene y establece el tipo del documento.
+  - `getKeywords()`, `setKeywords(List<String> keywords)`: Obtiene y establece las palabras clave del documento.
+  - `addKeyword(String keyword)`, `removeKeyword(String keyword)`: Agrega y remueve palabras clave del documento.
+  - `toString()`: Retorna una representación en cadena del documento, incluyendo sus atributos.
+
+---
+
+### Explicación del Código `Author`
+
+- **Atributos:**
+  - `id`: Identificador único del autor.
+  - `fullName`: Nombre completo del autor.
+
+- **Constructor:**
+  - Inicializa los atributos `id` y `fullName` al crear una instancia de `Author`.
+
+- **Métodos Principales:**
+  - `getId()`: Retorna el ID del autor.
+  - `getFullName()`, `setFullName(String fullName)`: Obtiene y establece el nombre completo del autor.
+  - `toString()`: Retorna una representación en cadena del autor, incluyendo su nombre completo y ID.
+
+---
+
+### Explicación del Código `DocumentAuthor`
+
+- **Atributos:**
+  - `documentId`: ID del documento asociado.
+  - `authorId`: ID del autor asociado.
+
+- **Constructor:**
+  - Inicializa los atributos `documentId` y `authorId` al crear una instancia de `DocumentAuthor`.
+
+- **Métodos Principales:**
+  - `getDocumentId()`, `setDocumentId(int documentId)`: Obtiene y establece el ID del documento.
+  - `getAuthorId()`, `setAuthorId(int authorId)`: Obtiene y establece el ID del autor.
+  - `toString()`: Retorna una representación en cadena de la relación entre documento y autor, incluyendo sus IDs.
+
+
 ## Explicación del Código LibraryManager
 
 ### Lógica del Programa:
