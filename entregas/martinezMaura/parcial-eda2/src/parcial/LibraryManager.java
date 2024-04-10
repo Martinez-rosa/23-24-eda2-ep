@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class LibraryManager {
+
     private List<Document> documents;
     private List<Author> authors;
     private List<DocumentAuthor> DocumentAuthors;
@@ -102,7 +103,7 @@ public class LibraryManager {
     while (addAuthors) {
         System.out.println("Do you want to add an author to this document? (Y/N)");
         String choice = scanner.next().toUpperCase();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); 
 
         if (choice.equals("Y")) {
             addAuthorToDocument(document.getId());
@@ -234,5 +235,4 @@ public class LibraryManager {
 
         }
     }
-
 }
