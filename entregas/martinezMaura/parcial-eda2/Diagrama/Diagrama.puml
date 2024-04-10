@@ -6,9 +6,7 @@ package "parcial" {
 
         + Author(int id, String fullName)
         + getFullName(): String
-        + setFullName(String fullName): void
         + getId(): int
-        + setId(int id): void
         + toString(): String
     }
 
@@ -28,15 +26,7 @@ package "parcial" {
 
         + Document(int id, String title, int publicationYear, DocumentType type)
         + getId(): int
-        + setId(int id): void
-        + getTitle(): String
-        + setTitle(String title): void
-        + getPublicationYear(): int
-        + setPublicationYear(int publicationYear): void
-        + getType(): DocumentType
-        + setType(DocumentType type): void
         + getKeywords(): List<String>
-        + setKeywords(List<String> keywords): void
         + addKeyword(String keyword): void
         + removeKeyword(String keyword): void
         + toString(): String
@@ -48,9 +38,7 @@ package "parcial" {
 
         + DocumentAuthor(int documentId, int authorId)
         + getDocumentId(): int
-        + setDocumentId(int documentId): void
         + getAuthorId(): int
-        + setAuthorId(int authorId): void
         + toString(): String
     }
 
@@ -62,16 +50,18 @@ package "parcial" {
 
         + LibraryManager()
         + displayMenu(): void
-        + addDocument(): void
-        + addAuthor(): void
-        + associateAuthorWithDocument(): void
-        + searchDocumentById(): void
-        + searchAuthorById(): void
-        + getAuthorsByDocumentId(int documentId): List<Author>
-        + getDocumentsByAuthorId(int authorId): List<Document>
-        + getDocumentById(int id): Document
-        + getAuthorById(int id): Author
-        + listAllDocuments(): void
+        - addDocument(): void
+        - addAuthorToDocument: void
+        - addAuthor(): void
+        - addKeywordsToDocument(): void
+        - associateAuthorWithDocument(): void
+        - searchDocumentById(): void
+        - searchAuthorById(): void
+        - getAuthorsByDocumentId(int documentId): List<Author>
+        - getDocumentsByAuthorId(int authorId): List<Document>
+        - getDocumentById(int id): Document
+        - getAuthorById(int id): Author
+        - listAllDocuments(): void
     }
 }
 

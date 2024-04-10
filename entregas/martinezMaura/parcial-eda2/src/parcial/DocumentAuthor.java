@@ -13,10 +13,6 @@ public class DocumentAuthor {
         return documentId;
     }
 
-    public void setDocumentId(int documentId) {
-        this.documentId = documentId;
-    }
-
     public int getAuthorId() {
         return authorId;
     }
