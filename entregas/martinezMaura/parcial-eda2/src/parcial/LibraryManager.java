@@ -28,7 +28,8 @@ public class LibraryManager {
             System.out.println("4. Search for a document by ID");
             System.out.println("5. Search for an author by ID");
             System.out.println("6. List all documents");
-            System.out.println("7. Exit");
+            System.out.println("7. Add keywords to a document");
+            System.out.println("8. Exit");
             System.out.print("Enter your choice (1-7): ");
 
             choice = scanner.nextInt();
@@ -54,21 +55,22 @@ public class LibraryManager {
                     listAllDocuments();
                     break;
                 case 7:
+                    addKeywordsToDocument();
+                    break;
+                case 8:
                     System.out.println("Exiting Library Management System. Goodbye!");
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
                     break;
             }
-        } while (choice != 7);
+        } while (choice != 8);
     }
 
     private void addDocument() {
 
         int id = documents.size() + 1;
 
-        System.out.println("Enter the ID of the document:");
-        scanner.nextLine();
         System.out.println("Enter the title of the document:");
         String title = scanner.nextLine();
         System.out.println("Enter the publication year:");
@@ -97,35 +99,42 @@ public class LibraryManager {
                 type = DocumentType.BOOK;
                 break;
         }
+
         Document document = new Document(id, title, publicationYear, type);
         documents.add(document);
-        boolean addAuthors = true;
-    while (addAuthors) {
-        System.out.println("Do you want to add an author to this document? (Y/N)");
-        String choice = scanner.next().toUpperCase();
-        scanner.nextLine(); 
 
-        if (choice.equals("Y")) {
-            addAuthorToDocument(document.getId());
-        } else {
-            addAuthors = false;
+        boolean addAuthors = true;
+
+        while (addAuthors) {
+
+            System.out.println("Do you want to add an author to this document? (Y/N)");
+            String choice = scanner.next().toUpperCase();
+            scanner.nextLine();
+
+            if (choice.equals("Y")) {
+                addAuthorToDocument(document.getId());
+                System.out.println("Another author to be added? (Y/N)");
+            } else {
+                addAuthors = false;
+            }
+
+            System.out.println("Document added successfully!");
         }
-        System.out.println("Document added successfully!");
     }
 
     private void addAuthorToDocument(int documentId) {
-      
+
         int authorId = authors.size() + 1;
-    
+
         System.out.println("Enter the full name of the author:");
         String fullName = scanner.nextLine();
-    
+
         Author author = new Author(authorId, fullName);
         authors.add(author);
-    
-       
+
         DocumentAuthor documentAuthor = new DocumentAuthor(documentId, authorId);
         DocumentAuthors.add(documentAuthor);
+    }
 
     private void addAuthor() {
         System.out.println("Enter the ID of the author:");
@@ -204,6 +213,28 @@ public class LibraryManager {
             }
         }
         return associatedDocuments;
+    }
+
+    private void addKeywordsToDocument() {
+        System.out.println("Enter the ID of the document to add keywords:");
+        int documentId = scanner.nextInt();
+        scanner.nextLine();
+
+        Document document = getDocumentById(documentId);
+        if (document == null) {
+            System.out.println("Document not found.");
+            return;
+        }
+
+        System.out.println("Enter a keyword to add (or type 'done' to finish):");
+        String keyword;
+        do {
+            keyword = scanner.nextLine();
+            if (!keyword.equalsIgnoreCase("done")) {
+                document.addKeyword(keyword);
+                System.out.println("Keyword added successfully.");
+            }
+        } while (!keyword.equalsIgnoreCase("done"));
     }
 
     private Document getDocumentById(int id) {
