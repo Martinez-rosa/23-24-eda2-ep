@@ -7,13 +7,13 @@ import java.util.Scanner;
 public class LibraryManager {
     private List<Document> documents;
     private List<Author> authors;
-    private List<AuthorDocument> authorDocuments;
+    private List<DocumentAuthor> DocumentAuthors;
     private Scanner scanner;
 
     public LibraryManager() {
         documents = new ArrayList<>();
         authors = new ArrayList<>();
-        authorDocuments = new ArrayList<>();
+        DocumentAuthors = new ArrayList<>();
         scanner = new Scanner(System.in);
     }
 
@@ -73,23 +73,23 @@ public class LibraryManager {
         System.out.println("Enter the type of document:");
         System.out.println("1. BOOK 2. MAGAZINE 3. ARTICLE 4. PAPER");
         int typeOption = scanner.nextInt();
-        Type type = null;
+        DocumentType type = null;
         switch (typeOption) {
             case 1:
-                type = Type.BOOK;
+                type = DocumentType.BOOK;
                 break;
             case 2:
-                type = Type.MAGAZINE;
+                type = DocumentType.MAGAZINE;
                 break;
             case 3:
-                type = Type.ARTICLE;
+                type = DocumentType.ARTICLE;
                 break;
             case 4:
-                type = Type.PAPER;
+                type = DocumentType.PAPER;
                 break;
             default:
                 System.out.println("Invalid document type. Defaulting to BOOK.");
-                type = Type.BOOK;
+                type = DocumentType.BOOK;
                 break;
         }
         Document document = new Document(id, title, publicationYear, type);
@@ -113,8 +113,8 @@ public class LibraryManager {
         int documentId = scanner.nextInt();
         System.out.println("Enter the ID of the author:");
         int authorId = scanner.nextInt();
-        AuthorDocument authorDocument = new AuthorDocument(documentId, authorId);
-        authorDocuments.add(authorDocument);
+        DocumentAuthor DocumentAuthor = new DocumentAuthor(documentId, authorId);
+        DocumentAuthors.add(DocumentAuthor);
         System.out.println("Author associated with document successfully!");
     }
 
@@ -152,9 +152,9 @@ public class LibraryManager {
 
     public List<Author> getAuthorsByDocumentId(int documentId) {
         List<Author> associatedAuthors = new ArrayList<>();
-        for (AuthorDocument authorDocument : authorDocuments) {
-            if (authorDocument.getDocumentId() == documentId) {
-                Author author = getAuthorById(authorDocument.getAuthorId());
+        for (DocumentAuthor DocumentAuthor : DocumentAuthors) {
+            if (DocumentAuthor.getDocumentId() == documentId) {
+                Author author = getAuthorById(DocumentAuthor.getAuthorId());
                 if (author != null) {
                     associatedAuthors.add(author);
                 }
@@ -165,9 +165,9 @@ public class LibraryManager {
 
     public List<Document> getDocumentsByAuthorId(int authorId) {
         List<Document> associatedDocuments = new ArrayList<>();
-        for (AuthorDocument authorDocument : authorDocuments) {
-            if (authorDocument.getAuthorId() == authorId) {
-                Document document = getDocumentById(authorDocument.getDocumentId());
+        for (DocumentAuthor DocumentAuthor : DocumentAuthors) {
+            if (DocumentAuthor.getAuthorId() == authorId) {
+                Document document = getDocumentById(DocumentAuthor.getDocumentId());
                 if (document != null) {
                     associatedDocuments.add(document);
                 }
@@ -208,7 +208,7 @@ public class LibraryManager {
 
     public static void main(String[] args) {
         LibraryManager libraryManager = new LibraryManager();
-        libraryManager.displayMenu(); /
+        libraryManager.displayMenu();
     }
 
 }
