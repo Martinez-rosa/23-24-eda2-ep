@@ -63,16 +63,20 @@ public class LibraryManager {
     }
 
     private void addDocument() {
+
+        int id = documents.size() + 1;
+
         System.out.println("Enter the ID of the document:");
-        int id = scanner.nextInt();
         scanner.nextLine();
         System.out.println("Enter the title of the document:");
         String title = scanner.nextLine();
         System.out.println("Enter the publication year:");
         int publicationYear = scanner.nextInt();
-        System.out.println("Enter the type of document:");
+        System.out.println("Enter the type of document (1-2-3-4):");
         System.out.println("1. BOOK 2. MAGAZINE 3. ARTICLE 4. PAPER");
+
         int typeOption = scanner.nextInt();
+
         DocumentType type = null;
         switch (typeOption) {
             case 1:
@@ -94,8 +98,33 @@ public class LibraryManager {
         }
         Document document = new Document(id, title, publicationYear, type);
         documents.add(document);
+        boolean addAuthors = true;
+    while (addAuthors) {
+        System.out.println("Do you want to add an author to this document? (Y/N)");
+        String choice = scanner.next().toUpperCase();
+        scanner.nextLine(); // Consume newline
+
+        if (choice.equals("Y")) {
+            addAuthorToDocument(document.getId());
+        } else {
+            addAuthors = false;
+        }
         System.out.println("Document added successfully!");
     }
+
+    private void addAuthorToDocument(int documentId) {
+      
+        int authorId = authors.size() + 1;
+    
+        System.out.println("Enter the full name of the author:");
+        String fullName = scanner.nextLine();
+    
+        Author author = new Author(authorId, fullName);
+        authors.add(author);
+    
+       
+        DocumentAuthor documentAuthor = new DocumentAuthor(documentId, authorId);
+        DocumentAuthors.add(documentAuthor);
 
     private void addAuthor() {
         System.out.println("Enter the ID of the author:");
