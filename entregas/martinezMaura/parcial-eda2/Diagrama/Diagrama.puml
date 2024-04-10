@@ -62,6 +62,9 @@ package "parcial" {
         - getDocumentById(int id): Document
         - getAuthorById(int id): Author
         - listAllDocuments(): void
+  
+    class LibrarySimulation {
+        + main(String[] args): void
     }
 }
 
@@ -71,5 +74,6 @@ LibraryManager -- "0..*" DocumentAuthor : manages
 Author "1" -l- "0..*" DocumentAuthor : contains
 Document "1" -r- "0..*"DocumentAuthor : contains
 DocumentType -r- LibraryManager
+LibrarySimulation -- LibraryManager : creates
 
 @enduml
