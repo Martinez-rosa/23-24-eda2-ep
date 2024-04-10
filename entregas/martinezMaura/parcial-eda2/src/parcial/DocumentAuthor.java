@@ -21,10 +21,6 @@ public class DocumentAuthor {
         return authorId;
     }
 
-    public void setAuthorId(int authorId) {
-        this.authorId = authorId;
-    }
-
     @Override
     public String toString() {
         return "> AuthorBook [documentId=" + documentId + ", authorId=" + authorId + "]";
