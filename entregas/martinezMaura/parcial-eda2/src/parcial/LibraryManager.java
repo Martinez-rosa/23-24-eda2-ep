@@ -1,4 +1,4 @@
-package entregas.parcialEda;
+package parcial;
 
 import java.util.ArrayList;
 import java.util.List;
