@@ -90,7 +90,7 @@ La enumeración `DocumentType` permite definir un conjunto fijo de tipos de docu
   - `getDocumentById()`: Busca un documento por su ID dentro de la lista de documentos.
   - `getAuthorById()`: Busca un autor por su ID dentro de la lista de autores.
 
-### Método `main()`:
+### Método `main()`/`LibrarySimulation´:
 - El método `main()` crea una instancia de `LibraryManager` y llama a `displayMenu()` para iniciar el sistema de gestión de biblioteca.
 
 ### Notas Finales:
