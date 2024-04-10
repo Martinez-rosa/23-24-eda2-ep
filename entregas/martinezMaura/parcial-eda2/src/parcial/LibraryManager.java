@@ -106,20 +106,25 @@ public class LibraryManager {
         boolean addAuthors = true;
 
         while (addAuthors) {
-
             System.out.println("Do you want to add an author to this document? (Y/N)");
             String choice = scanner.next().toUpperCase();
             scanner.nextLine();
-
             if (choice.equals("Y")) {
                 addAuthorToDocument(document.getId());
                 System.out.println("Another author to be added? (Y/N)");
+
+                String anotherAuthorChoice = scanner.nextLine().toUpperCase();
+
+                if (!anotherAuthorChoice.equals("Y")) {
+                    addAuthors = false;
+                }
             } else {
                 addAuthors = false;
             }
 
-            System.out.println("Document added successfully!");
         }
+
+        System.out.println("Document added successfully!");
     }
 
     private void addAuthorToDocument(int documentId) {
