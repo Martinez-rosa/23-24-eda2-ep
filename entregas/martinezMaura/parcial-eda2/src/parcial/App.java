@@ -1,6 +1,6 @@
 package parcial;
 
-public class LibrarySimulation {
+public class App {
 
     public static void main(String[] args) {
         LibraryManager libraryManager = new LibraryManager();

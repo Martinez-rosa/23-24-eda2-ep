@@ -22,9 +22,6 @@ public class Document {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -44,10 +41,6 @@ public class Document {
 
     public DocumentType getType() {
         return type;
-    }
-
-    public void setType(DocumentType type) {
-        this.type = type;
     }
 
     public List<String> getKeywords() {

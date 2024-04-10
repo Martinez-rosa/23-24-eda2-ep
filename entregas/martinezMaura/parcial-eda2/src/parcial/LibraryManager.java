@@ -62,7 +62,7 @@ public class LibraryManager {
         } while (choice != 7);
     }
 
-    public void addDocument() {
+    private void addDocument() {
         System.out.println("Enter the ID of the document:");
         int id = scanner.nextInt();
         scanner.nextLine();
@@ -97,7 +97,7 @@ public class LibraryManager {
         System.out.println("Document added successfully!");
     }
 
-    public void addAuthor() {
+    private void addAuthor() {
         System.out.println("Enter the ID of the author:");
         int id = scanner.nextInt();
         scanner.nextLine();
@@ -108,7 +108,7 @@ public class LibraryManager {
         System.out.println("Author added successfully!");
     }
 
-    public void associateAuthorWithDocument() {
+    private void associateAuthorWithDocument() {
         System.out.println("Enter the ID of the document:");
         int documentId = scanner.nextInt();
         System.out.println("Enter the ID of the author:");
@@ -118,7 +118,7 @@ public class LibraryManager {
         System.out.println("Author associated with document successfully!");
     }
 
-    public void searchDocumentById() {
+    private void searchDocumentById() {
         System.out.println("Enter the ID of the document:");
         int id = scanner.nextInt();
         for (Document document : documents) {
@@ -134,7 +134,7 @@ public class LibraryManager {
         System.out.println("Document not found.");
     }
 
-    public void searchAuthorById() {
+    private void searchAuthorById() {
         System.out.println("Enter the ID of the author:");
         int id = scanner.nextInt();
         for (Author author : authors) {
@@ -150,7 +150,7 @@ public class LibraryManager {
         System.out.println("Author not found.");
     }
 
-    public List<Author> getAuthorsByDocumentId(int documentId) {
+    private List<Author> getAuthorsByDocumentId(int documentId) {
         List<Author> associatedAuthors = new ArrayList<>();
         for (DocumentAuthor DocumentAuthor : DocumentAuthors) {
             if (DocumentAuthor.getDocumentId() == documentId) {
@@ -163,7 +163,7 @@ public class LibraryManager {
         return associatedAuthors;
     }
 
-    public List<Document> getDocumentsByAuthorId(int authorId) {
+    private List<Document> getDocumentsByAuthorId(int authorId) {
         List<Document> associatedDocuments = new ArrayList<>();
         for (DocumentAuthor DocumentAuthor : DocumentAuthors) {
             if (DocumentAuthor.getAuthorId() == authorId) {
@@ -176,7 +176,7 @@ public class LibraryManager {
         return associatedDocuments;
     }
 
-    public Document getDocumentById(int id) {
+    private Document getDocumentById(int id) {
         for (Document document : documents) {
             if (document.getId() == id) {
                 return document;
@@ -185,7 +185,7 @@ public class LibraryManager {
         return null;
     }
 
-    public Author getAuthorById(int id) {
+    private Author getAuthorById(int id) {
         for (Author author : authors) {
             if (author.getId() == id) {
                 return author;
@@ -194,7 +194,7 @@ public class LibraryManager {
         return null;
     }
 
-    public void listAllDocuments() {
+    private void listAllDocuments() {
         System.out.println("----- List of Documents -----");
         for (Document document : documents) {
             System.out.println(document);
