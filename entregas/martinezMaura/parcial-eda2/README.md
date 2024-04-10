@@ -23,14 +23,11 @@ La enumeración `DocumentType` permite definir un conjunto fijo de tipos de docu
   - `keywords`: Lista de palabras clave asociadas al documento.
 
 - **Constructor:**
-  - Inicializa los atributos `id`, `title`, `publicationYear`, `type` y `keywords` al crear una instancia de `Document`.
+  - Inicializa los atributos `id`, `title`, `publicationYear`, `type` y `keywords` al crear una instancia de `Document` y los establece. 
 
 - **Métodos Principales:**
-  - `getId()`: Retorna el ID del documento.
-  - `getTitle()`, `setTitle(String title)`: Obtiene y establece el título del documento.
-  - `getPublicationYear()`, `setPublicationYear(int publicationYear)`: Obtiene y establece el año de publicación del documento.
-  - `getType()`, `setType(DocumentType type)`: Obtiene y establece el tipo del documento.
-  - `getKeywords()`, `setKeywords(List<String> keywords)`: Obtiene y establece las palabras clave del documento.
+  - `getId()`: Retorna el ID del documento
+  - `getKeywords()`: Obtiene las palabras clave del documento.
   - `addKeyword(String keyword)`, `removeKeyword(String keyword)`: Agrega y remueve palabras clave del documento.
   - `toString()`: Retorna una representación en cadena del documento, incluyendo sus atributos.
 
@@ -43,11 +40,10 @@ La enumeración `DocumentType` permite definir un conjunto fijo de tipos de docu
   - `fullName`: Nombre completo del autor.
 
 - **Constructor:**
-  - Inicializa los atributos `id` y `fullName` al crear una instancia de `Author`.
+  - Inicializa los atributos `id` y `fullName` al crear una instancia de `Author` y los establece. 
 
 - **Métodos Principales:**
   - `getId()`: Retorna el ID del autor.
-  - `getFullName()`, `setFullName(String fullName)`: Obtiene y establece el nombre completo del autor.
   - `toString()`: Retorna una representación en cadena del autor, incluyendo su nombre completo y ID.
 
 ---
@@ -59,11 +55,11 @@ La enumeración `DocumentType` permite definir un conjunto fijo de tipos de docu
   - `authorId`: ID del autor asociado.
 
 - **Constructor:**
-  - Inicializa los atributos `documentId` y `authorId` al crear una instancia de `DocumentAuthor`.
+  - Inicializa y establece los atributos `documentId` y `authorId` al crear una instancia de `DocumentAuthor`.
 
 - **Métodos Principales:**
-  - `getDocumentId()`, `setDocumentId(int documentId)`: Obtiene y establece el ID del documento.
-  - `getAuthorId()`, `setAuthorId(int authorId)`: Obtiene y establece el ID del autor.
+  - `getDocumentId()`: Obtiene el ID del documento.
+  - `getAuthorId()`: Obtiene el ID del autor.
   - `toString()`: Retorna una representación en cadena de la relación entre documento y autor, incluyendo sus IDs.
 
 ---
@@ -76,7 +72,7 @@ La enumeración `DocumentType` permite definir un conjunto fijo de tipos de docu
 
 - **Menú Principal (`displayMenu()`):**
   - El método `displayMenu()` muestra un menú interactivo para que el usuario elija diferentes opciones de gestión de biblioteca.
-  - Utiliza un bucle do-while para repetir el menú hasta que el usuario decida salir (`choice == 7`).
+  - Utiliza un bucle do-while para repetir el menú hasta que el usuario decida salir (`choice == 8`).
   - Cada opción del menú corresponde a un método específico (`addDocument()`, `addAuthor()`, `associateAuthorWithDocument()`, etc.) que realiza una operación en función de la selección del usuario.
 
 - **Operaciones de Gestión de Documentos y Autores:**
@@ -85,6 +81,7 @@ La enumeración `DocumentType` permite definir un conjunto fijo de tipos de docu
   - `associateAuthorWithDocument()`: Asocia un autor existente con un documento existente mediante sus IDs.
   - `searchDocumentById()`: Busca un documento por su ID e imprime sus detalles junto con los autores asociados.
   - `searchAuthorById()`: Busca un autor por su ID e imprime sus detalles junto con los documentos asociados.
+  - `addKeywordsToDocument()`: Añade palabras claves y las relaciona con su respectivo documento.
   - `listAllDocuments()`: Lista todos los documentos existentes junto con sus autores asociados.
 
 - **Búsquedas por ID y Obtención de Asociaciones:**
